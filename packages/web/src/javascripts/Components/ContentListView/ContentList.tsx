@@ -22,11 +22,12 @@ const ContentList: FunctionComponent<Props> = ({ application, items, selectedUui
   const { filesController, itemListController, navigationController, notesController } = application
 
   const { selectPreviousItem, selectNextItem } = itemListController
-  const { hideTags, hideDate, hideNotePreview, hideEditorIcon } = itemListController.webDisplayOptions
+  const { hideTags, hideDate, hideNotePreview, hideEditorIcon, notesListLayout } = itemListController.webDisplayOptions
   const { sortBy } = itemListController.displayOptions
   const selectedTag = navigationController.selected
 
   const isMobileScreen = useMediaQuery(MutuallyExclusiveMediaQueryBreakpoints.sm)
+  const isTiledLayout = notesListLayout === 'tiles'
 
   const onScroll: UIEventHandler = useCallback(
     (e) => {
@@ -88,6 +89,7 @@ const ContentList: FunctionComponent<Props> = ({ application, items, selectedUui
         'md:max-h-full pointer-coarse:md:overflow-y-auto',
         'flex-grow',
         isMobileScreen ? !itemListController.isMultipleSelectionMode && 'pb-safe-bottom' : 'pb-2',
+        isTiledLayout ? 'grid grid-cols-2 gap-3 px-3 py-3' : '',
       )}
       id={ElementIds.ContentList}
       onScroll={onScroll}
@@ -110,6 +112,7 @@ const ContentList: FunctionComponent<Props> = ({ application, items, selectedUui
             onSelect={selectItem}
             tags={getTagsForItem(item)}
             notesController={notesController}
+            isTiled={isTiledLayout}
           />
         )
       })}

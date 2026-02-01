@@ -83,7 +83,7 @@ android {
 
     namespace "com.standardnotes"
     defaultConfig {
-        applicationId "com.standardnotes"
+        applicationId "com.nonstandardnotes"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
 
@@ -129,6 +129,15 @@ android {
     }
 
     sourceSets.main.assets.srcDirs += ['src/main/assets', '../../html']
+
+    splits {
+        abi {
+            enable true
+            reset()
+            include "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+            universalApk false
+        }
+    }
 }
 
 dependencies {
@@ -147,4 +156,3 @@ dependencies {
         implementation jscFlavor
     }
 }
-

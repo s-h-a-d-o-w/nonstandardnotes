@@ -87,7 +87,6 @@ const ContentList: FunctionComponent<Props> = ({ application, items, selectedUui
       className={classNames(
         'infinite-scroll overflow-y-auto overflow-x-hidden focus:shadow-none focus:outline-none',
         'md:max-h-full pointer-coarse:md:overflow-y-auto',
-        'flex-grow',
         isMobileScreen ? !itemListController.isMultipleSelectionMode && 'pb-safe-bottom' : 'pb-2',
         isTiledLayout ? 'grid grid-cols-2 gap-3 px-3 py-3' : '',
       )}

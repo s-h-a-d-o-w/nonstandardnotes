@@ -123,7 +123,7 @@ android {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
             productFlavors.dev.signingConfig System.getenv('DETOX_CI') ? signingConfigs.debug : signingConfigs.release
-            productFlavors.prod.signingConfig System.getenv('DETOX_CI') ? signingConfigs.debug : signingConfigs.release
+            productFlavors.prod.signingConfig signingConfigs.debug
             proguardFile "${rootProject.projectDir}/../node_modules/detox/android/detox/proguard-rules-app.pro"
         }
     }
@@ -132,7 +132,7 @@ android {
 
     splits {
         abi {
-            enable true
+            enable false
             reset()
             include "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
             universalApk false

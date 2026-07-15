@@ -4,7 +4,6 @@ import {
   $createParagraphNode,
   $getRoot,
   $insertNodes,
-  $isParagraphNode,
   LexicalEditor,
   LexicalNode,
   SerializedLexicalNode,
@@ -21,6 +20,7 @@ import { parseFileName } from '@standardnotes/utils'
 import { $dfs } from '@lexical/utils'
 import { $isFileNode } from '../Plugins/EncryptedFilePlugin/Nodes/FileUtils'
 import { $generateNodesFromSerializedNodes, $insertGeneratedNodes } from '@lexical/clipboard'
+import { highlightHtmlImport } from '../Lexical/Utils/highlightHtmlImport'
 
 export class HeadlessSuperConverter implements SuperConverterServiceInterface {
   private importEditor: LexicalEditor
@@ -33,6 +33,9 @@ export class HeadlessSuperConverter implements SuperConverterServiceInterface {
       editable: false,
       onError: (error: Error) => console.error(error),
       nodes: BlockEditorNodes,
+      html: {
+        import: highlightHtmlImport,
+      },
     })
     this.exportEditor = createHeadlessEditor({
       namespace: 'BlocksEditor',
@@ -151,14 +154,6 @@ export class HeadlessSuperConverter implements SuperConverterServiceInterface {
         switch (toFormat) {
           case 'txt':
           case 'md': {
-            for (const { node: paragraph } of $dfs()) {
-              if (!$isParagraphNode(paragraph)) {
-                continue
-              }
-              if (paragraph.isEmpty()) {
-                paragraph.remove()
-              }
-            }
             content = $convertToMarkdownString(MarkdownTransformers)
             resolve()
             break

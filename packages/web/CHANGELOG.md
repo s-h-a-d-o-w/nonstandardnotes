@@ -3,6 +3,134 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.201.32](https://github.com/standardnotes/app/compare/@standardnotes/web@3.201.31...@standardnotes/web@3.201.32) (2026-07-06)
+
+### Bug Fixes
+
+* Fixes default language for newly created code blocks in Super notes ([#2999](https://github.com/standardnotes/app/issues/2999)) ([9d026df](https://github.com/standardnotes/app/commit/9d026df49aedc49b143e7cf91576576c73e49986))
+* Fixes Super replace functionality not correctly hidden when toggling Prevent editing on a note ([#3022](https://github.com/standardnotes/app/issues/3022)) ([386d73f](https://github.com/standardnotes/app/commit/386d73ffb839e7a6b3c4bc7578c674fa6b29f658))
+
+## [3.201.31](https://github.com/standardnotes/app/compare/@standardnotes/web@3.201.30...@standardnotes/web@3.201.31) (2026-06-08)
+
+**Note:** Version bump only for package @standardnotes/web
+
+## [3.201.30](https://github.com/standardnotes/app/compare/@standardnotes/web@3.201.29...@standardnotes/web@3.201.30) (2026-06-07)
+
+**Note:** Version bump only for package @standardnotes/web
+
+## [3.201.29](https://github.com/standardnotes/app/compare/@standardnotes/web@3.201.28...@standardnotes/web@3.201.29) (2026-06-05)
+
+### Bug Fixes
+
+* Fixes checkboxes parsed as bullet items when importing Evernote notes ([f488518](https://github.com/standardnotes/app/commit/f4885188ad7a289b16f95eeea56de2bed56dfb95))
+* Fixes highlight text style lost when importing Evernote notes ([a62f496](https://github.com/standardnotes/app/commit/a62f496ee6ca588876b616261c479f6499b4ec19))
+
+## [3.201.28](https://github.com/standardnotes/app/compare/@standardnotes/web@3.201.27...@standardnotes/web@3.201.28) (2026-05-27)
+
+### Bug Fixes
+
+* Fixes cell padding and bold font within table cells in Super pdf export ([c81589b](https://github.com/standardnotes/app/commit/c81589b945b04b6f2b6842f193495d562c132bc8))
+* Fixes images rendering too small on Super pdf export ([80fa337](https://github.com/standardnotes/app/commit/80fa337afba85bada70b4ddacb6e5ad391978f28))
+* Fixes Super pdf export code block formatting issues ([bd3cf60](https://github.com/standardnotes/app/commit/bd3cf600e7a766c2fd980fbc01924e59664184b8))
+* Fixes Super pdf export headings font sizes and weights ([6daf58c](https://github.com/standardnotes/app/commit/6daf58c92893a6cfa93596a2429ed3e0697222e0))
+* Fixes Super pdf export line height ([e22e6fc](https://github.com/standardnotes/app/commit/e22e6fce7936a9b425f90e7363f274bce3b3b841))
+* Fixes Upgrade button in Settings leading to purchase page ([#3011](https://github.com/standardnotes/app/issues/3011)) ([eda1bfe](https://github.com/standardnotes/app/commit/eda1bfe0bd5b2be762dadf840f49034a2c659816))
+
+## [3.201.27](https://github.com/standardnotes/app/compare/@standardnotes/web@3.201.26...@standardnotes/web@3.201.27) (2026-04-29)
+
+### Bug Fixes
+
+* Fixes Super search highlights styling ([#3009](https://github.com/standardnotes/app/issues/3009)) ([a39bb82](https://github.com/standardnotes/app/commit/a39bb824f7b6d4f761abb27df9b7c7ba4818ce14))
+* Switches back to note list on mobile when active note is deleted from a different device ([#3008](https://github.com/standardnotes/app/issues/3008)) ([f4a9481](https://github.com/standardnotes/app/commit/f4a94811848ea19550703d5dcd2b446091bf9536))
+
+## [3.201.26](https://github.com/standardnotes/app/compare/@standardnotes/web@3.201.25...@standardnotes/web@3.201.26) (2026-04-24)
+
+### Bug Fixes
+
+* Shows info on UI and hides Manage button for shared subs ([#3002](https://github.com/standardnotes/app/issues/3002)) ([073db14](https://github.com/standardnotes/app/commit/073db143144bf88007010e4f44003198b327b4da))
+
+## [3.201.25](https://github.com/standardnotes/app/compare/@standardnotes/web@3.201.24...@standardnotes/web@3.201.25) (2026-04-23)
+
+### Bug Fixes
+
+* Adds dynamic type support for iOS ([#3005](https://github.com/standardnotes/app/issues/3005)) ([6261fd8](https://github.com/standardnotes/app/commit/6261fd8241b36be0e73dd84b39d31059d6077c16))
+* Fixes Super sections drag and drop issues on mobile ([#3003](https://github.com/standardnotes/app/issues/3003)) ([b330890](https://github.com/standardnotes/app/commit/b33089029f5979adf0c8e80a65c29a38945cf899))
+* Prevents unhandled error when attempting to import a blank note ([#3004](https://github.com/standardnotes/app/issues/3004)) ([90ca0c2](https://github.com/standardnotes/app/commit/90ca0c2cfb648d34c97d58b332a10c61daa20fa4))
+
+## [3.201.24](https://github.com/standardnotes/app/compare/@standardnotes/web@3.201.23...@standardnotes/web@3.201.24) (2026-04-07)
+
+**Note:** Version bump only for package @standardnotes/web
+
+## [3.201.23](https://github.com/standardnotes/app/compare/@standardnotes/web@3.201.22...@standardnotes/web@3.201.23) (2026-04-07)
+
+**Note:** Version bump only for package @standardnotes/web
+
+## [3.201.22](https://github.com/standardnotes/app/compare/@standardnotes/web@3.201.21...@standardnotes/web@3.201.22) (2026-04-07)
+
+**Note:** Version bump only for package @standardnotes/web
+
+## [3.201.21](https://github.com/standardnotes/app/compare/@standardnotes/web@3.201.20...@standardnotes/web@3.201.21) (2026-03-06)
+
+**Note:** Version bump only for package @standardnotes/web
+
+## [3.201.20](https://github.com/standardnotes/app/compare/@standardnotes/web@3.201.19...@standardnotes/web@3.201.20) (2026-03-06)
+
+### Bug Fixes
+
+* Adjusts lists items left marin on iOS ([#2991](https://github.com/standardnotes/app/issues/2991)) ([e2f9f63](https://github.com/standardnotes/app/commit/e2f9f636ae61929101ac778fde4a388e48f89179))
+* Fixes dropdowns styling when labels are too long ([#2989](https://github.com/standardnotes/app/issues/2989)) ([bdc43d6](https://github.com/standardnotes/app/commit/bdc43d6d5496b10fbcefd501420bd79cea7db39e))
+* Fixes prompt for Cmd/Ctrl+Backspace command on trashed note ([#2990](https://github.com/standardnotes/app/issues/2990)) ([8a845df](https://github.com/standardnotes/app/commit/8a845df38c98f774e52e968a94ec40dba64ad8cd))
+* Renders single line breaks properly on Super editor Show markdown ([#2988](https://github.com/standardnotes/app/issues/2988)) ([ac07cea](https://github.com/standardnotes/app/commit/ac07cea06efa041957d1ac227dd6e9ff2190b613))
+
+## [3.201.19](https://github.com/standardnotes/app/compare/@standardnotes/web@3.201.18...@standardnotes/web@3.201.19) (2026-02-24)
+
+### Bug Fixes
+
+* Fixes Import button staying disabled after untoggling option to add notes to a tag ([#2981](https://github.com/standardnotes/app/issues/2981)) ([75c3e2e](https://github.com/standardnotes/app/commit/75c3e2e6fd2e992d6e1e8c82e52678b0c750e623))
+* Fixes lists left margin on Super editor on mobile ([#2983](https://github.com/standardnotes/app/issues/2983)) ([0c4ce38](https://github.com/standardnotes/app/commit/0c4ce38aa4caf8cbfd23a339e5bffff771e877f7))
+* Fixes multiple selection checkbox not working when only one note is selected ([99c7cb9](https://github.com/standardnotes/app/commit/99c7cb92b5e5d08000e24908e735ef02f9059990))
+* Fixes unselecting note deactivating multiple selection note when there is only one selected note left ([36f973a](https://github.com/standardnotes/app/commit/36f973aa3fdd7f79767d4da8e443dd3504e24f8f))
+* Prevents note list from switching to a different note when opening a note not in the current folder from the command palette ([#2986](https://github.com/standardnotes/app/issues/2986)) ([ff58de3](https://github.com/standardnotes/app/commit/ff58de30fb4d8093f5056b5c4789163e81edf632))
+* Redirect to app after creating account ([#2984](https://github.com/standardnotes/app/issues/2984)) ([f4c64b8](https://github.com/standardnotes/app/commit/f4c64b8db2e5a51547182b67436aff7c2a23c3ad))
+* Render line breaks properly on Super editor Show markdown ([#2982](https://github.com/standardnotes/app/issues/2982)) ([6b15118](https://github.com/standardnotes/app/commit/6b151187189a88774d439e6cfd7204207e26c3f8))
+
+## [3.201.18](https://github.com/standardnotes/app/compare/@standardnotes/web@3.201.17...@standardnotes/web@3.201.18) (2026-02-07)
+
+**Note:** Version bump only for package @standardnotes/web
+
+## [3.201.17](https://github.com/standardnotes/app/compare/@standardnotes/web@3.201.16...@standardnotes/web@3.201.17) (2026-02-07)
+
+**Note:** Version bump only for package @standardnotes/web
+
+## [3.201.16](https://github.com/standardnotes/app/compare/@standardnotes/web@3.201.15...@standardnotes/web@3.201.16) (2026-02-07)
+
+**Note:** Version bump only for package @standardnotes/web
+
+## [3.201.15](https://github.com/standardnotes/app/compare/@standardnotes/web@3.201.14...@standardnotes/web@3.201.15) (2026-02-06)
+
+**Note:** Version bump only for package @standardnotes/web
+
+## [3.201.14](https://github.com/standardnotes/app/compare/@standardnotes/web@3.201.13...@standardnotes/web@3.201.14) (2026-02-06)
+
+**Note:** Version bump only for package @standardnotes/web
+
+## [3.201.13](https://github.com/standardnotes/app/compare/@standardnotes/web@3.201.12...@standardnotes/web@3.201.13) (2026-02-06)
+
+**Note:** Version bump only for package @standardnotes/web
+
+## [3.201.12](https://github.com/standardnotes/app/compare/@standardnotes/web@3.201.11...@standardnotes/web@3.201.12) (2026-02-05)
+
+### Bug Fixes
+
+* Keeps note active even if it's not on the current view when coming from command palette ([#2979](https://github.com/standardnotes/app/issues/2979)) [skip e2e] ([e63be04](https://github.com/standardnotes/app/commit/e63be048f491ecf5d216b50548032b339df33199))
+
+## [3.201.11](https://github.com/standardnotes/app/compare/@standardnotes/web@3.201.10...@standardnotes/web@3.201.11) (2026-02-05)
+
+### Bug Fixes
+
+* Add support for hiragana and katakana on Super pdf export ([#2977](https://github.com/standardnotes/app/issues/2977)) ([fafd15e](https://github.com/standardnotes/app/commit/fafd15ec96b3961c4c87004ed59ad84b9209fb83))
+* Adds support for superscript and subscript on Super pdf exports ([#2978](https://github.com/standardnotes/app/issues/2978)) [skip e2e] ([f5a721b](https://github.com/standardnotes/app/commit/f5a721bae0522a2286902b323ee3392964f51295))
+
 ## [3.201.10](https://github.com/standardnotes/app/compare/@standardnotes/web@3.201.9...@standardnotes/web@3.201.10) (2026-01-27)
 
 ### Bug Fixes

@@ -89,6 +89,7 @@ export class ItemListController
     includeTrashed: false,
     includeProtected: true,
   }
+  private keepActiveItemOpenUuid: UuidString | undefined
   webDisplayOptions: WebDisplayOptions = {
     hideTags: true,
     hideDate: false,
@@ -269,10 +270,9 @@ export class ItemListController
     this.disposers.push(
       reaction(
         () => this.selectedItemsCount,
-        (count, prevCount) => {
+        (count) => {
           const hasNoSelectedItem = count === 0
-          const onlyOneSelectedItemAfterChange = prevCount > count && count === 1
-          if (hasNoSelectedItem || onlyOneSelectedItemAfterChange) {
+          if (hasNoSelectedItem) {
             this.cancelMultipleSelection()
           }
         },
@@ -500,6 +500,10 @@ export class ItemListController
       !activeItemExistsInUpdatedResults && !isSearching && this.navigationController.isInAnySystemView()
 
     if (closeBecauseActiveItemDoesntExistInCurrentSystemView) {
+      if (activeItem && activeItem.uuid === this.keepActiveItemOpenUuid) {
+        log(LoggingDomain.Selection, 'shouldCloseActiveItem false due to keepActiveItemOpenUuid')
+        return false
+      }
       log(LoggingDomain.Selection, 'shouldCloseActiveItem closePreviousItemWhenSwitchingToFilesBasedView')
       return true
     }
@@ -509,6 +513,10 @@ export class ItemListController
   }
 
   private shouldSelectNextItemOrCreateNewNote = (activeItem: SNNote | FileItem | undefined) => {
+    if (activeItem?.uuid === this.keepActiveItemOpenUuid) {
+      return false
+    }
+
     const selectedView = this.navigationController.selected
 
     const isActiveItemTrashed = activeItem?.trashed
@@ -591,6 +599,9 @@ export class ItemListController
 
         log(LoggingDomain.Selection, 'Selecting next item after closing active one')
         this.selectNextItem({ userTriggered: false })
+      } else if (this.paneController.isInMobileView && !this.itemManager.findItem(activeItem.uuid)) {
+        log(LoggingDomain.Selection, 'Navigating back to item list because active note was deleted remotely')
+        void this.paneController.setPaneLayout(PaneLayout.ItemSelection)
       }
     } else if (activeItem && this.shouldSelectActiveItem(activeItem)) {
       log(LoggingDomain.Selection, 'Selecting active item')
@@ -947,6 +958,7 @@ export class ItemListController
   }
 
   handleTagChange = async (userTriggered: boolean) => {
+    this.clearKeepActiveItemOpenUuid()
     const activeNoteController = this.getActiveItemController()
     if (activeNoteController instanceof NoteViewController && activeNoteController.isTemplateNote) {
       this.closeItemController(activeNoteController)
@@ -1187,7 +1199,7 @@ export class ItemListController
     if (userTriggered && hasShift && !isMobileScreen()) {
       await this.selectItemsRange({ selectedItem: item })
     } else if (userTriggered && this.isMultipleSelectionMode) {
-      if (this.selectedUuids.has(uuid) && hasMoreThanOneSelected) {
+      if (this.selectedUuids.has(uuid)) {
         this.removeSelectedItem(uuid)
       } else if (isAuthorizedForAccess) {
         this.selectedUuids.add(uuid)
@@ -1202,9 +1214,21 @@ export class ItemListController
       }
     }
 
+    if (this.keepActiveItemOpenUuid && uuid !== this.keepActiveItemOpenUuid) {
+      this.clearKeepActiveItemOpenUuid()
+    }
+
     return {
       didSelect: this.selectedUuids.has(uuid),
     }
+  }
+
+  keepActiveItemOpenForSystemView = (noteUuid: UuidString): void => {
+    this.keepActiveItemOpenUuid = noteUuid
+  }
+
+  private clearKeepActiveItemOpenUuid(): void {
+    this.keepActiveItemOpenUuid = undefined
   }
 
   selectItem = async (

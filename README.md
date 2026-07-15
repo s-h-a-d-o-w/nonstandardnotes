@@ -1,3 +1,10 @@
+# Non-Standard Notes (fork)
+
+Differences:
+- [Tiled note list](https://github.com/standardnotes/app/pull/2976)
+- [Can be built on Windows](https://github.com/standardnotes/app/pull/2974)
+- [Docs improvement](https://github.com/standardnotes/app/pull/2975)
+
 # Standard Notes
 
 Standard Notes is an end-to-end encrypted note-taking app for digitalists and professionals. Capture your notes, files, and life’s work all in one secure place.

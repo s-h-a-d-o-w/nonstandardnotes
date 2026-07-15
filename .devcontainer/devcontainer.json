@@ -1,0 +1,19 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:24-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+        "version": "17",
+        "installMaven": true
+    },
+    "ghcr.io/NordcomInc/devcontainer-features/android-sdk:1": {
+      "platform": "35",
+      "build_tools": "35.0.0",
+      "extra_packages": "ndk;27.1.12297006"
+    },
+    "ghcr.io/s-h-a-d-o-w/devcontainers-features/js-k8s": {}
+  },
+  "overrideFeatureInstallOrder": [
+    "ghcr.io/devcontainers/features/java",
+    "ghcr.io/NordcomInc/devcontainer-features/android-sdk"
+  ]
+}

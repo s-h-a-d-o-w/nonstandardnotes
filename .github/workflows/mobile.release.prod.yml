@@ -3,7 +3,7 @@ name: Mobile Release Production
 on:
   push:
     tags:
-      - '@nonstandardnotes/web@*'
+      - '@nonstandardnotes/mobile@*'
 
 jobs:
   android:
@@ -14,9 +14,9 @@ jobs:
     timeout-minutes: 45
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
       - name: Setup Java version
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v6
         with:
           distribution: 'zulu'
           java-version: '17'
@@ -32,20 +32,12 @@ jobs:
         run: ./gradlew assembleProdRelease -PversionName=${{ env.PACKAGE_VERSION }} -PversionCode=${{ github.run_number }}
         working-directory: packages/mobile/android
 
-      - name: Generate Release Notes
-        uses: ./actions/release-notes
-        with:
-          package: mobile
-        id: release-notes
-        continue-on-error: true
-
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v3
         with:
           token: ${{ secrets.CI_PAT_TOKEN }}
           tag_name: "@nonstandardnotes/mobile@${{ env.PACKAGE_VERSION }}"
           name: "Mobile ${{ env.PACKAGE_VERSION }}"
-          body: ${{ steps.release-notes.outputs.result }}
           prerelease: false
           draft: false
           files: |
